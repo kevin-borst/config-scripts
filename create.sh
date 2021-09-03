@@ -5,7 +5,7 @@ CONFIG=${2}
 
 generate-dashboard -o ${JSON_NAME} ${CONFIG}
 
-payload="{\"dashboard\": $(jq . frontend.json), \"overwrite\": false}"
+payload="{\"dashboard\": $(jq . ${JSON_NAME}), \"overwrite\": false}"
 
 curl -X POST -H "Authorization: Bearer eyJrIjoiNUdxNE5jczlETFdvOW5aNVhJU05KS2YzOUVMMGVjQTUiLCJuIjoiYWRtaW4iLCJpZCI6MX0=" \
   -H "Content-Type: application/json" \
